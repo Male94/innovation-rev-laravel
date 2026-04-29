@@ -15,6 +15,9 @@ services:
       SERVICE_TAGS: dev
     volumes:
       - ./:/var/www
+      - /var/www/vendor
+      - /var/www/node_modules
+      - /var/www/public/build
       - ./storage:/var/www/storage
     networks:
       - app-network
