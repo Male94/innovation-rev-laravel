@@ -17,7 +17,7 @@ services:
       - ./:/var/www
       - /var/www/vendor
       - /var/www/node_modules
-      - /var/www/public/build
+      - build_assets:/var/www/public/build
       - ./storage:/var/www/storage
     networks:
       - app-network
@@ -32,6 +32,7 @@ services:
       - "8002:80"
     volumes:
       - ./:/var/www
+      - build_assets:/var/www/public/build
       - ./.docker/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
@@ -57,3 +58,6 @@ services:
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  build_assets:
