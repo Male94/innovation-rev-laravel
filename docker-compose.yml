@@ -49,8 +49,6 @@ services:
     environment:
       MYSQL_DATABASE: innovation_rev
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD: root
-      MYSQL_USER: root
     volumes:
       - ./dbdata:/var/lib/mysql
     networks:
